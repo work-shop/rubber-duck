@@ -2,11 +2,11 @@
 module.exports = function( io ) {
 
 	function newMessageHandler( user, message, timestamp, response, tags ) {
-		console.log( 'user-received: ' + message );
+		console.log( 'user-received: ' + user );
 		console.log( 'message-received: ' + message );
 		console.log( 'timestamp-received: ' + timestamp );
 		console.log( 'response-received: ' + response );
-		console.log( 'tags-received: ' + response );
+		console.log( 'tags-received: ' + tags );
 
 		// persistance stuff
 
@@ -17,7 +17,6 @@ module.exports = function( io ) {
 		init: function( socket ) {
 			console.log('init handler');
 			socket.on('disconnect', function() { console.log('disconnect'); } );
-
 			socket.on('new-message', newMessageHandler );
 		}
 	};
