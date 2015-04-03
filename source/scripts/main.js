@@ -17,8 +17,6 @@ $(document).ready( function() {
 	function inputhandler( event ) {
 		if ( event.keyCode != 13 ) return;
 
-		console.log('hello!')
-
 		var message = inputfield.val();
 		var timestamp = Date.now().toString();
 		var response = duck( message );
