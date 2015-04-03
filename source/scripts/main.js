@@ -1,6 +1,6 @@
 var socket = io();
 
-var responses = ['Quack!', 'Have you tried having coffee?', 'Are you sure that\'s a real problem?'];
+var responses = ['Quack!', 'Have you tried having coffee?', 'Are you sure that\'s a real problem?', 'Have you thought about hiring Work-Shop for this?'];
 var delays = [
 	300,	
 	1500,
@@ -17,6 +17,8 @@ $(document).ready( function() {
 	function inputhandler( event ) {
 		if ( event.keyCode != 13 ) return;
 
+		console.log('hellop?')
+
 		var message = inputfield.val();
 		var timestamp = Date.now().toString();
 		var response = duck( message );
@@ -27,6 +29,9 @@ $(document).ready( function() {
 	}
 
 	function duck( message ) {
+
+		console.log('test');
+
 		var response = randomChoice( responses );
 
 		var thisMessegeElement = createMessageElement( message, response );

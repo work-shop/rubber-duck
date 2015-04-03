@@ -8,22 +8,18 @@
 	<script type="text/javascript" src="socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
 	<script type="text/javascript"></script>
-
-	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
 	<main>
 
 		<div class="col-user">
-			<form>
-				<textarea id="message-box" placeholder="Help me, please!"></textarea>
-				<div class="permissions">
-					<input type="checkbox" id="anonymous" name="anonymous"></input>
-					<label for="anonymous">My thoughts are private.</lable>
-				</div>
-				<input type="submit" value="Get Some Help"></input>
-			</form>
+			<textarea id="box-message" type="text" placeholder="Help me, please!"></textarea>
+			<div class="permissions">
+				<input type="checkbox" id="anonymous" name="anonymous"></input>
+				<label for="anonymous">My thoughts are private.</lable>
+			</div>
+			<input type="submit" value="Get Some Help"></input>
 		</div>
 
 		<div id="message-log">
