@@ -1,4 +1,5 @@
 @import "compass/css3";
+@import "normalize";
 
 
 /* BORDER-BOX ALL THE THINGS */
@@ -10,18 +11,32 @@ html {
   box-sizing: inherit;
 }
 
-
-/* MIXINS */
-
-$padding: 12px;
-
-
 /* COLORS */
 
 $blue: #d5e1ec;
 $cream: #e1d9ce;
-$black: #414343;
+$gray: #a7a9a9;
+$black: darken($gray,30);
+$white: #ffffff;
+$yellow: #ffea78;
 
+
+/* MIXINS */
+
+$padding: 12px;
+$border: 2px solid lighten($gray,10);
+
+@mixin clearfix {
+	display: inline-block;
+	&:after {
+	     visibility: hidden;
+	     display: block;
+	     font-size: 0;
+	     content: " ";
+	     clear: both;
+	     height: 0;
+    }
+}
 
 /* TYPOGRAPHY */
 
@@ -30,6 +45,7 @@ $serif: serif;
 
 body {
 	font-family: $sans-serif;
+	background: lighten($cream,12);
 }
 
 a {
@@ -44,73 +60,139 @@ a {
 
 /* STYLES */
 
-.left, .right {
+main {
+	height: 90%;
+	width: 100%;
+	overflow: auto;
+	position: fixed;
+}
+
+footer {
+	height: 10%;
+}
+
+.col-user, #message-log, .col-duck {
 	min-height: 600px;
 	float: left;
-	width: 48%;
 	padding: $padding;
 }
 
-.left {
-	background: $cream;
+.col-user, .col-duck {
+	width: 28%;
+}
+
+.col-user {
 	text-align: center;
 	padding-top: $padding*4;
 }
 
-.right {
-	background: $blue;
+#message-log {
+	width: 40%;
+	padding: $padding*2;
+}
+
+.message {
+	width: 300px;
+	margin-top: $padding;
+	min-height: 100px;
+	font-size: 22px;
+	color: $black;
+	padding: $padding;
+	@include border-radius($padding);
+	position: relative;
+	@include clearfix;
+	&.duck {
+		background: $yellow;
+		float: right;
+		&:before {
+		  content: '';
+		  position: absolute;
+		  right: -15px;
+		  bottom: 10%;
+		  transform: translateY(-50%);
+		  -webkit-transform: translateY(-50%);
+		  border-top: 7px solid transparent;
+		  border-left: 15px solid $yellow;
+		  border-bottom: 7px solid transparent;
+		}
+	}
+	&.user {
+		background: $blue;
+		&:before {
+		  content: '';
+		  position: absolute;
+		  left: -15px;
+		  bottom: 10%;
+		  transform: translateY(-50%);
+		  -webkit-transform: translateY(-50%);
+		  border-top: 7px solid transparent;
+		  border-right: 15px solid $blue;
+		  border-bottom: 7px solid transparent;
+		}
+	}
+
 }
 
 img {
 	max-width: 200px;
 	float: right;
-	padding-right: 12px;
+	padding-right: $padding;
+}
+
+form {
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
 }
 
 textarea {
-	min-height: 300px;
-	width: 80%;
-	margin: 0 auto;
-	padding: 12px;
+	min-height: 200px;
+	width: 100%;
+	padding: $padding;
+	margin-bottom: $padding;
 	display: block;
 	font-size: 22px;
+	background: rgba($white,0.6);
+	border: $border;
+	resize: vertical;
 	color: darken($blue,20);
+	&:focus {
+		outline: none;
+		border-color: darken($blue,20);
+	}
+}
+
+.permissions {
+	font-size: 0.85em;
+	text-align: left;
 }
 
 input[type='submit'] {
 	clear: both;
 	margin-top: $padding*2;
-	padding: $padding;
+	padding: $padding $padding*2;
+	border: none;
+	@include border-radius($padding/2);
+	background: lighten($cream,20);
+	color: darken($blue,20);
 }
 
-.response {
-	width: 260px;
-	background: lighten($cream,10);
-	font-size: 22px;
-	color: $black;
-	padding: $padding $padding $padding $padding*2;
-	@include border-radius($padding);
-	position: relative;
-	&:before {
-		content: "\201C";
-		font-size: 2em;
-		font-family: $serif;
-		color: lighten($cream,20);
-		position: absolute;
-		top: $padding;
-		left: $padding;
-	}
+#response {
+
 }
 
 .footer {
 	background: lighten($blue,5);
-	height: 48px;
 	width: 100%;
+	padding: $padding;
 	position: absolute;
 	bottom: 0;
 	h1 {
 		font-size: 1.25em;
 		float: left;
 		padding-right: 24px;
+	}
+	p {
+		float: right;
 	}
 }

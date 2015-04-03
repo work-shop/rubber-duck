@@ -7,27 +7,40 @@
 
 <body>
 
-	<!-- COLUMN LEFT -->
-	<div class="left">
-		<textarea placeholder="Help me, please!"></textarea>
-		<input type="submit" value="Send"></input>
-	</div>
+	<main>
 
-	<!-- COLUMN RIGHT -->
-	<div class="right">
-
-		<div class="response">
-			<p>Quack.</p>
+		<div class="col-user">
+			<form>
+				<textarea placeholder="Help me, please!"></textarea>
+				<div class="permissions">
+					<input type="checkbox" id="anonymous" name="anonymous"></input>
+					<label for="anonymous">My thoughts are private.</lable>
+				</div>
+				<input type="submit" value="Get Some Help"></input>
+			</form>
 		</div>
 
-		<img src="http://www.sneakerheadvc.com/wp-content/uploads/2013/10/rubber-duck.jpg">
+		<div id="message-log">
+			<div class="call message user">
+				I hate my life.
+			</div>
+			<div class="response message duck">
+				Tell me your problems.
+			</div>
+		</div>
 
-	</div>
+
+		<div class="col-duck">
+			<img src="http://www.sneakerheadvc.com/wp-content/uploads/2013/10/rubber-duck.jpg">
+		</div>
+		
+	</main>
 
 	<div class="footer">
 		<h1>Rubber Ducky Programming</h1>
-		Copyright 2015 Rubber Ducky Programming, a project by <a href="http://workshopri.com">Work-Shop</a>
+		<p>Copyright 2015 Rubber Ducky Programming, a project by <a href="http://workshopri.com">Work-Shop</a></p>
 	</div>
+
 
 </body>
 
