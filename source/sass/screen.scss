@@ -24,7 +24,6 @@ $yellow: #ffea78;
 /* MIXINS */
 
 $padding: 12px;
-$border: 2px solid lighten($gray,10);
 
 @mixin clearfix {
 	display: inline-block;
@@ -40,7 +39,7 @@ $border: 2px solid lighten($gray,10);
 
 /* TYPOGRAPHY */
 
-$sans-serif: "Open Sans", Helvetica Nueue, Arial, sans-serif;
+$sans-serif: Apercu, Helvetica Nueue, Arial, sans-serif;
 $serif: serif;
 
 body {
@@ -152,13 +151,13 @@ textarea {
 	margin-bottom: $padding;
 	display: block;
 	font-size: 22px;
-	background: rgba($white,0.6);
-	border: $border;
+	background: $white;
+	border: 2px solid $white;
 	resize: vertical;
 	color: darken($blue,20);
 	&:focus {
 		outline: none;
-		border-color: darken($blue,20);
+		border-color: $blue;
 	}
 }
 
@@ -187,12 +186,17 @@ input[type='submit'] {
 	padding: $padding;
 	position: absolute;
 	bottom: 0;
+	text-align: right;
 	h1 {
 		font-size: 1.25em;
+		color: lighten($black,10);
 		float: left;
 		padding-right: 24px;
 	}
 	p {
 		float: right;
+	}
+	small {
+		display: block;
 	}
 }

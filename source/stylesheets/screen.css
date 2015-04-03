@@ -450,25 +450,25 @@ html {
 /* COLORS */
 /* MIXINS */
 /* TYPOGRAPHY */
-/* line 46, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 body {
-  font-family: "Open Sans", Helvetica Nueue, Arial, sans-serif;
+  font-family: Apercu, Helvetica Nueue, Arial, sans-serif;
   background: #f8f6f4;
 }
 
-/* line 51, ../sass/screen.scss */
+/* line 50, ../sass/screen.scss */
 a {
   text-decoration: none;
   color: #8d9090;
   border-bottom: 1px solid #5a5d5d;
 }
-/* line 55, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 a:hover {
   color: #5a5d5d;
 }
 
 /* STYLES */
-/* line 63, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 main {
   height: 90%;
   width: 100%;
@@ -476,36 +476,36 @@ main {
   position: fixed;
 }
 
-/* line 70, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 footer {
   height: 10%;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 .col-user, #message-log, .col-duck {
   min-height: 600px;
   float: left;
   padding: 12px;
 }
 
-/* line 80, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 .col-user, .col-duck {
   width: 28%;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 .col-user {
   text-align: center;
   padding-top: 48px;
 }
 
-/* line 89, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 #message-log {
   width: 40%;
   padding: 24px;
 }
 
-/* line 94, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 .message {
   width: 300px;
   margin-top: 12px;
@@ -519,7 +519,7 @@ footer {
   position: relative;
   display: inline-block;
 }
-/* line 31, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 .message:after {
   visibility: hidden;
   display: block;
@@ -528,12 +528,12 @@ footer {
   clear: both;
   height: 0;
 }
-/* line 104, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 .message.duck {
   background: #ffea78;
   float: right;
 }
-/* line 107, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .message.duck:before {
   content: '';
   position: absolute;
@@ -545,11 +545,11 @@ footer {
   border-left: 15px solid #ffea78;
   border-bottom: 7px solid transparent;
 }
-/* line 119, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 .message.user {
   background: #d5e1ec;
 }
-/* line 121, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 .message.user:before {
   content: '';
   position: absolute;
@@ -562,21 +562,21 @@ footer {
   border-bottom: 7px solid transparent;
 }
 
-/* line 136, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 img {
   max-width: 200px;
   float: right;
   padding-right: 12px;
 }
 
-/* line 142, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 form {
   width: 80%;
   margin: 0 auto;
   position: relative;
 }
 
-/* line 148, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 textarea {
   min-height: 200px;
   width: 100%;
@@ -584,24 +584,24 @@ textarea {
   margin-bottom: 12px;
   display: block;
   font-size: 22px;
-  background: rgba(255, 255, 255, 0.6);
-  border: 2px solid #c1c2c2;
+  background: #ffffff;
+  border: 2px solid #ffffff;
   resize: vertical;
   color: #8fafcc;
 }
-/* line 159, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 textarea:focus {
   outline: none;
-  border-color: #8fafcc;
+  border-color: #d5e1ec;
 }
 
-/* line 165, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .permissions {
   font-size: 0.85em;
   text-align: left;
 }
 
-/* line 170, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 input[type='submit'] {
   clear: both;
   margin-top: 24px;
@@ -614,21 +614,27 @@ input[type='submit'] {
   color: #8fafcc;
 }
 
-/* line 184, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 .footer {
   background: #e7eef4;
   width: 100%;
   padding: 12px;
   position: absolute;
   bottom: 0;
+  text-align: right;
 }
 /* line 190, ../sass/screen.scss */
 .footer h1 {
   font-size: 1.25em;
+  color: #747676;
   float: left;
   padding-right: 24px;
 }
-/* line 195, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 .footer p {
   float: right;
+}
+/* line 199, ../sass/screen.scss */
+.footer small {
+  display: block;
 }

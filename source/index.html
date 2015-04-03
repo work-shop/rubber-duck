@@ -7,14 +7,26 @@
 	<script type="text/javascript" src="scripts/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
-	<script type="text/javascript"></script>
+	<script type="text/javascript">
+	WebFontConfig = { fontdeck: { id: '37770' } };
+
+	(function() {
+	  var wf = document.createElement('script');
+	  wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+	  wf.type = 'text/javascript';
+	  wf.async = 'true';
+	  var s = document.getElementsByTagName('script')[0];
+	  s.parentNode.insertBefore(wf, s);
+	})();
+	</script>
 </head>
 
 <body>
 	<main>
 
 		<div class="col-user">
-			<textarea id="box-message" type="text" placeholder="Help me, please!"></textarea>
+			<textarea id="box-message" type="text" autofocus></textarea>
 			<div class="permissions">
 				<input type="checkbox" id="anonymous" name="anonymous"></input>
 				<label for="anonymous">My thoughts are private.</lable>
@@ -23,18 +35,20 @@
 		</div>
 
 		<div id="message-log">
+			<div class="duck message response">Quack! <br/>I'm here to help. Tell me about your problem.</div>
 		</div>
 
 
 		<div class="col-duck">
-			<img src="http://www.sneakerheadvc.com/wp-content/uploads/2013/10/rubber-duck.jpg">
+			<img src="img/ducky.png">
 		</div>
-		
+
 	</main>
 
 	<div class="footer">
-		<h1>Rubber Ducky Programming</h1>
-		<p>Copyright 2015 Rubber Ducky Programming, a project by <a href="http://workshopri.com">Work-Shop</a></p>
+		<h1>Quack</h1>
+		<p>Rubber Duck Debugging<small>&copy; 2015 <strong>Quack</strong>, a project by <a href="http://workshopri.com">Work-Shop</a></small></p>
+		
 	</div>
 </body>
 
