@@ -1,0 +1,116 @@
+@import "compass/css3";
+
+
+/* BORDER-BOX ALL THE THINGS */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* MIXINS */
+
+$padding: 12px;
+
+
+/* COLORS */
+
+$blue: #d5e1ec;
+$cream: #e1d9ce;
+$black: #414343;
+
+
+/* TYPOGRAPHY */
+
+$sans-serif: "Open Sans", Helvetica Nueue, Arial, sans-serif;
+$serif: serif;
+
+body {
+	font-family: $sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: lighten($black,20);
+	border-bottom: 1px solid $black;
+	&:hover {
+		color: $black;
+	}
+}
+
+
+/* STYLES */
+
+.left, .right {
+	min-height: 600px;
+	float: left;
+	width: 48%;
+	padding: $padding;
+}
+
+.left {
+	background: $cream;
+	text-align: center;
+	padding-top: $padding*4;
+}
+
+.right {
+	background: $blue;
+}
+
+img {
+	max-width: 200px;
+	float: right;
+	padding-right: 12px;
+}
+
+textarea {
+	min-height: 300px;
+	width: 80%;
+	margin: 0 auto;
+	padding: 12px;
+	display: block;
+	font-size: 22px;
+	color: darken($blue,20);
+}
+
+input[type='submit'] {
+	clear: both;
+	margin-top: $padding*2;
+	padding: $padding;
+}
+
+.response {
+	width: 260px;
+	background: lighten($cream,10);
+	font-size: 22px;
+	color: $black;
+	padding: $padding $padding $padding $padding*2;
+	@include border-radius($padding);
+	position: relative;
+	&:before {
+		content: "\201C";
+		font-size: 2em;
+		font-family: $serif;
+		color: lighten($cream,20);
+		position: absolute;
+		top: $padding;
+		left: $padding;
+	}
+}
+
+.footer {
+	background: lighten($blue,5);
+	height: 48px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	h1 {
+		font-size: 1.25em;
+		float: left;
+		padding-right: 24px;
+	}
+}
