@@ -1,6 +1,6 @@
 var socket = io();
 
-var responses = ['Quack!'];
+var responses = ['Quack!', 'Have you tried having coffee?', 'Are you sure that\'s a real problem?'];
 var delays = [
 	300,	
 	1500,
@@ -22,9 +22,9 @@ $(document).ready( function() {
 		var message = inputfield.val();
 		var timestamp = Date.now().toString();
 		var response = duck( message );
-		var tags = JSON.stringify({});
+		var tags = {};
 
-		socket.emit('new-message', '', message, timestamp, response, {});
+		socket.emit('new-message', '', message, timestamp, response, tags);
 		inputfield.val('');
 	}
 
@@ -34,15 +34,16 @@ $(document).ready( function() {
 		var thisMessegeElement = createMessageElement( message, response );
 		var thisResponseElement = createResponseElement( message, '...' );
 
-		responsefield.append( thisMessegeElement )
+		responsefield.prepend( thisMessegeElement )
 				 .delay( randomChoice( delays ) )
-				 .append( thisResponseElement )
+				 .prepend( thisResponseElement )
 				 .queue( function( next ) {
 				 	thisResponseElement.removeClass('typing');
 				 	thisResponseElement.text( response );
 				 	next();
 				 });
 
+		return response;
 	}
 
 	function randomChoice( array ) {
@@ -58,11 +59,8 @@ $(document).ready( function() {
 	}
 
 	function newMessageHandler( user, message, timestamp, response, tags ) {
-		// console.log( user );
-		// console.log( message );
-		// console.log( timestamp );
-		// console.log( response );
-		// console.log( tags );
+		console.log( timestamp + ': ' + message + ' => ' + response);
+		//$('#outside').append(createMessageElement(message,''));
 	}
 
 	inputfield.on('keyup', inputhandler );
