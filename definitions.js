@@ -1,8 +1,16 @@
 
 module.exports = function( io ) {
 
-	function newMessageHandler( msg ) {
-		console.log( 'message-received: ' + msg );
+	function newMessageHandler( user, message, timestamp, response, tags ) {
+		console.log( 'user-received: ' + message );
+		console.log( 'message-received: ' + message );
+		console.log( 'timestamp-received: ' + timestamp );
+		console.log( 'response-received: ' + response );
+		console.log( 'tags-received: ' + response );
+
+		// persistance stuff
+
+		io.emit('new-message', user, message, timestamp, response, tags );
 	}
 
 	return {
