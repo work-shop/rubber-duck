@@ -70,24 +70,32 @@ footer {
 	height: 10%;
 }
 
-.col-user, #message-log, .col-duck {
-	min-height: 600px;
-	float: left;
-	padding: $padding;
-}
-
-.col-user, .col-duck {
-	width: 28%;
-}
-
 .col-user {
 	text-align: center;
-	padding-top: $padding*4;
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	z-index: 1;
+	> div {
+		max-width: 400px;
+		margin: 0 auto;
+		position: relative;
+		background: rgba($white,0.5);
+		padding: $padding;
+	}
+}
+
+.col-duck {
+	position: fixed;
+	right: 5%;
+	top: 10%;
+	z-index: -1;
 }
 
 #message-log {
-	width: 40%;
+	max-width: 400px;
 	padding: $padding*2;
+	margin: 0 auto;
 }
 
 .message {
@@ -138,18 +146,11 @@ img {
 	padding-right: $padding;
 }
 
-form {
-	width: 80%;
-	margin: 0 auto;
-	position: relative;
-}
-
 textarea {
 	min-height: 200px;
 	width: 100%;
 	padding: $padding;
-	margin-bottom: $padding;
-	display: block;
+	margin: 0 auto;
 	font-size: 22px;
 	background: $white;
 	border: 2px solid $white;
@@ -174,10 +175,6 @@ input[type='submit'] {
 	@include border-radius($padding/2);
 	background: lighten($cream,20);
 	color: darken($blue,20);
-}
-
-#response {
-
 }
 
 .footer {
