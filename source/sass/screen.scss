@@ -37,8 +37,14 @@ $padding: 12px;
     }
 }
 
+.slideDown {
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
 .hidden {
-	display: none;
+	visibility: hidden;
 }
 
 /* TYPOGRAPHY */
@@ -66,30 +72,42 @@ main {
 	height: 90%;
 	width: 100%;
 	padding: $padding*2;
-	@include clearfix;
 }
 
 header {
-	@include clearfix;
 	display: block;
 	text-align: left;
 }
 
-.input {
+#message-log, .input {
 	max-width: 610px;
-	margin: 4% auto 0;
+	margin: 0 auto;
+}
+
+#message-log {
+	margin-top: -40px;
+	height: 258px;
+	overflow: auto;
+}
+
+.input {
+	margin-top: -20%;
 }
 
 footer {
 	width: 100%;
+	position: relative;
 	position: absolute;
 	bottom: 0;
 }
 
-.duck {
+img.duck {
 	position: absolute;
 	bottom: 5%;
 	right: 2%;
+	width: 100px;
+	height: auto;
+	z-index: -1;
 }
 
 /* STYLES */
@@ -100,19 +118,15 @@ footer {
 	height: auto;
 }
 
-.duck img {
-	width: 100px;
-	height: auto;
+#message-log {
+	background: $white;
+	overflow-y: scroll;
 }
 
 .message {
-	width: 300px;
-	height: 300px;
-	overflow-y: scroll;
 	color: $black;
 	padding: $padding;
 	position: relative;
-	@include clearfix;
 	&.duck {
 		background: $yellow;
 	}
@@ -135,16 +149,20 @@ textarea {
 	margin: 0 auto;
 	font-size: 22px;
 	background: $white;
-	border: 2px solid $white;
+	border: 2px solid lighten($gray,20);
 	resize: vertical;
 	color: darken($gray,20);
 	&:focus {
 		outline: none;
 		border-color: $gray;
 	}
+	@include input-placeholder {
+	    color: lighten($gray,20);
+	    font-style: italic;
+	}
 }
 
-input[type='submit'] {
+button {
 	clear: both;
 	margin-top: $padding*2;
 	padding: $padding $padding*2;

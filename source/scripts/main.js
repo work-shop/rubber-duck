@@ -76,6 +76,20 @@ $(document).ready( function() {
 	submitfield.on('click', handle_input);
 
 	socket.on( 'new-message', newMessageHandler);
+
+	$('#box-message').keyup(function(event){
+	    if(event.keyCode == 13){
+	        $('#submit').click();
+	    }
+	});
+
+	$('#submit').one( "click", function() {
+		$('#message-log').removeClass('hidden').css('margin-top','0')
+		.addClass('slideDown')
+		;
+		$('.input').css('margin-top','0').addClass('slideDown');
+	} );
+
 });
 
 
