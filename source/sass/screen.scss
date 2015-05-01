@@ -24,7 +24,6 @@ $yellow: #ffea78;
 /* MIXINS */
 
 $padding: 12px;
-$border: 2px solid lighten($gray,10);
 
 @mixin clearfix {
 	display: inline-block;
@@ -40,7 +39,7 @@ $border: 2px solid lighten($gray,10);
 
 /* TYPOGRAPHY */
 
-$sans-serif: "Open Sans", Helvetica Nueue, Arial, sans-serif;
+$sans-serif: Apercu, Helvetica Nueue, Arial, sans-serif;
 $serif: serif;
 
 body {
@@ -71,24 +70,32 @@ footer {
 	height: 10%;
 }
 
-.col-user, #message-log, .col-duck {
-	min-height: 600px;
-	float: left;
-	padding: $padding;
-}
-
-.col-user, .col-duck {
-	width: 28%;
-}
-
 .col-user {
 	text-align: center;
-	padding-top: $padding*4;
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+	z-index: 1;
+	> div {
+		max-width: 400px;
+		margin: 0 auto;
+		position: relative;
+		background: rgba($white,0.5);
+		padding: $padding;
+	}
+}
+
+.col-duck {
+	position: fixed;
+	right: 5%;
+	top: 10%;
+	z-index: -1;
 }
 
 #message-log {
-	width: 40%;
+	max-width: 400px;
 	padding: $padding*2;
+	margin: 0 auto;
 }
 
 .message {
@@ -139,26 +146,19 @@ img {
 	padding-right: $padding;
 }
 
-form {
-	width: 80%;
-	margin: 0 auto;
-	position: relative;
-}
-
 textarea {
 	min-height: 200px;
 	width: 100%;
 	padding: $padding;
-	margin-bottom: $padding;
-	display: block;
+	margin: 0 auto;
 	font-size: 22px;
-	background: rgba($white,0.6);
-	border: $border;
+	background: $white;
+	border: 2px solid $white;
 	resize: vertical;
 	color: darken($blue,20);
 	&:focus {
 		outline: none;
-		border-color: darken($blue,20);
+		border-color: $blue;
 	}
 }
 
@@ -177,22 +177,23 @@ input[type='submit'] {
 	color: darken($blue,20);
 }
 
-#response {
-
-}
-
 .footer {
 	background: lighten($blue,5);
 	width: 100%;
 	padding: $padding;
 	position: absolute;
 	bottom: 0;
+	text-align: right;
 	h1 {
 		font-size: 1.25em;
+		color: lighten($black,10);
 		float: left;
 		padding-right: 24px;
 	}
 	p {
 		float: right;
+	}
+	small {
+		display: block;
 	}
 }
