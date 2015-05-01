@@ -25,33 +25,29 @@
 <body>
 	<main>
 
-		<div class="col-user">
-			<div>
-				<textarea id="box-message" type="text" autofocus></textarea>
-				<div class="permissions">
-					<input type="checkbox" id="anonymous" name="anonymous"></input>
-					<label for="anonymous">My thoughts are private.</lable>
-				</div>
-				<input type="submit" value="Get Some Help"></input>
-			</div>
-		</div>
+		<header class="logo"><img src="img/logo-md.png" alt="Quack"></header>
 
-		<div id="message-log">
+		<div id="message-log" class="hidden">
 			<div class="duck message response">Quack! <br/>I'm here to help. Tell me about your problem.</div>
 		</div>
 
+		<div class="input">
+			<div>
+				<textarea id="box-message" type="text" placeholder="Tell me your problem..." autofocus></textarea>
+				<input type="submit" value="Let It Out"></input>
+			</div>
+		</div>
 
-		<div class="col-duck">
+
+		<div class="duck">
 			<img src="img/ducky.png">
 		</div>
 
 	</main>
 
-	<div class="footer">
-		<h1>Quack</h1>
-		<p>Rubber Duck Debugging<small>&copy; 2015 <strong>Quack</strong>, a project by <a href="http://workshopri.com">Work-Shop</a></small></p>
-		
-	</div>
+	<footer>
+		&copy; 2015 <strong>Quack</strong>, a project by <a href="http://workshopri.com">Work-Shop</a>
+	</footer>
 </body>
 
 </html>
