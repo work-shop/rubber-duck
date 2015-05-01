@@ -1,6 +1,13 @@
 var socket = io();
 
-var responses = ['Quack!', 'Have you tried having coffee?', 'Are you sure that\'s a real problem?', 'Have you thought about hiring Work-Shop for this?'];
+var responses = [
+	'Quack!', 
+	'Have you tried having coffee? Maybe a large dark?', 
+	'Are you sure that\'s a real problem?', 
+	'Have you thought about hiring Work-Shop for this? I really think that could help.',
+
+];
+
 var delays = [
 	300,	
 	1500,
@@ -12,12 +19,11 @@ var delays = [
 
 $(document).ready( function() {
 	var inputfield = $( '#box-message' );
+	var submitfield = $('#box-submit');
 	var responsefield = $('#message-log');
 
-	function inputhandler( event ) {
-		if ( event.keyCode != 13 ) return;
-
-		console.log('hellop?')
+	function handle_input() {
+		console.log('hello?')
 
 		var message = inputfield.val();
 		var timestamp = Date.now().toString();
@@ -63,10 +69,11 @@ $(document).ready( function() {
 
 	function newMessageHandler( user, message, timestamp, response, tags ) {
 		console.log( timestamp + ': ' + message + ' => ' + response);
-		//$('#outside').append(createMessageElement(message,''));
 	}
 
-	inputfield.on('keyup', inputhandler );
+	inputfield.on('keyup', function( e ) { if ( e.keyCode == 13 ) handle_input(); } );
+
+	submitfield.on('click', handle_input);
 
 	socket.on( 'new-message', newMessageHandler);
 });
