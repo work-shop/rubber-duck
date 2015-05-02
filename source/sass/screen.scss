@@ -14,8 +14,7 @@ html {
 /* COLORS */
 
 $blue: #d5e1ec;
-$cream: #e1d9ce;
-$gray: #a7a9a9;
+$gray: #A9B0AD;
 $black: darken($gray,30);
 $white: #ffffff;
 $yellow: #FFD700;
@@ -54,7 +53,7 @@ $serif: serif;
 
 body {
 	font-family: $sans-serif;
-	background: lighten($cream,12);
+	background: darken($gray,10);
 }
 
 a {
@@ -68,6 +67,12 @@ a {
 
 /* LAYOUT */
 
+.wrapper {
+	max-width: 610px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 main {
 	height: 90%;
 	width: 100%;
@@ -77,11 +82,14 @@ main {
 header {
 	display: block;
 	text-align: left;
+	margin-bottom: $padding;
+	max-width: 880px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-#message-log, .input {
-	max-width: 610px;
-	margin: 0 auto;
+#message-log, .input, footer p {
+	@extend .wrapper;
 }
 
 #message-log {
@@ -91,7 +99,7 @@ header {
 }
 
 .input {
-	margin-top: -20%;
+	margin-top: -180px;
 }
 
 footer {
@@ -103,7 +111,7 @@ footer {
 
 img.duck {
 	position: absolute;
-	bottom: 5%;
+	bottom: 40px;
 	right: 2%;
 	width: 100px;
 	height: auto;
@@ -120,6 +128,10 @@ img.duck {
 
 #message-log {
 	background: $white;
+	border-left: 2px solid;
+	border-top: 2px solid;
+	border-right: 2px solid;
+	border-color: darken($gray,20);
 	overflow-y: scroll;
 }
 
@@ -149,12 +161,12 @@ textarea {
 	margin: 0 auto;
 	font-size: 22px;
 	background: $white;
-	border: 2px solid lighten($gray,20);
+	border: 2px solid darken($gray,20);
 	resize: vertical;
 	color: darken($gray,20);
 	&:focus {
 		outline: none;
-		border-color: $gray;
+		border-color: $black;
 	}
 	@include input-placeholder {
 	    color: lighten($gray,20);
@@ -178,7 +190,6 @@ button {
 footer {
 	background: rgba(lighten($blue,5),0.7);
 	padding: $padding;
-	text-align: right;
-	color: $gray;
+	color: darken($gray,20);
 	font-size: 0.85em;
 }
