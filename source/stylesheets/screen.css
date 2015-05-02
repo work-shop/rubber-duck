@@ -448,53 +448,65 @@ html {
 }
 
 /* COLORS */
-/* MIXINS */
-/* line 39, ../sass/screen.scss */
+/* UTILITIES */
+/* line 41, ../sass/screen.scss */
 .slideDown {
   transition-property: all;
   transition-duration: .5s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
-/* line 45, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 .hidden {
   visibility: hidden;
 }
 
 /* TYPOGRAPHY */
-/* line 54, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 body {
   font-family: Apercu, Helvetica Nueue, Arial, sans-serif;
   background: #8e9894;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 a {
   text-decoration: none;
   color: #8e9894;
   border-bottom: 1px solid #5c6461;
 }
-/* line 63, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 a:hover {
   color: #5c6461;
 }
 
 /* LAYOUT */
-/* line 70, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 76, ../sass/screen.scss */
 .wrapper, #message-log, .input, footer p {
   max-width: 610px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 main {
-  height: 90%;
+  min-height: 100%;
   width: 100%;
   padding: 24px;
+  margin-bottom: -70px;
+}
+/* line 87, ../sass/screen.scss */
+main:after {
+  content: "";
+  display: block;
+  height: 70px;
 }
 
-/* line 82, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 header {
   display: block;
   text-align: left;
@@ -504,27 +516,27 @@ header {
   margin-right: auto;
 }
 
-/* line 95, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
 #message-log {
   margin-top: -40px;
   height: 258px;
   overflow: auto;
 }
 
-/* line 101, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 .input {
   margin-top: -180px;
 }
 
-/* line 105, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 footer {
+  height: 70px;
+  padding: 12px;
   width: 100%;
   position: relative;
-  position: absolute;
-  bottom: 0;
 }
 
-/* line 112, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 img.duck {
   position: absolute;
   bottom: 40px;
@@ -535,13 +547,13 @@ img.duck {
 }
 
 /* STYLES */
-/* line 124, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .logo img {
   width: 100px;
   height: auto;
 }
 
-/* line 129, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 #message-log {
   background: #ffffff;
   border-left: 2px solid;
@@ -551,29 +563,29 @@ img.duck {
   overflow-y: scroll;
 }
 
-/* line 138, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .message {
   color: #5c6461;
   padding: 12px;
   position: relative;
 }
-/* line 142, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 .message.duck {
   background: #FFD700;
 }
-/* line 145, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 .message.user {
   background: #ffffff;
 }
 
-/* line 151, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .duck img {
   max-width: 200px;
   float: right;
   padding-right: 12px;
 }
 
-/* line 157, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 textarea {
   min-height: 200px;
   width: 100%;
@@ -585,7 +597,7 @@ textarea {
   resize: vertical;
   color: #747f7a;
 }
-/* line 167, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 textarea:focus {
   outline: none;
   border-color: #5c6461;
@@ -611,7 +623,7 @@ textarea::-webkit-input-placeholder {
   font-style: italic;
 }
 
-/* line 177, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 button {
   clear: both;
   margin-top: 24px;
@@ -626,15 +638,14 @@ button {
   -webkit-transition: all, 0.125s;
   transition: all, 0.125s;
 }
-/* line 185, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 button:hover {
   background: #f5ce00;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 footer {
   background: rgba(231, 238, 244, 0.7);
-  padding: 12px;
   color: #747f7a;
   font-size: 0.85em;
 }

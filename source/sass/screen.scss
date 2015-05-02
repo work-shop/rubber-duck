@@ -20,9 +20,11 @@ $white: #ffffff;
 $yellow: #FFD700;
 
 
-/* MIXINS */
+/* UTILITIES */
 
 $padding: 12px;
+
+$footer-height: 70px;
 
 @mixin clearfix {
 	display: inline-block;
@@ -67,6 +69,10 @@ a {
 
 /* LAYOUT */
 
+html, body {
+  height: 100%;
+}
+
 .wrapper {
 	max-width: 610px;
 	margin-left: auto;
@@ -74,9 +80,15 @@ a {
 }
 
 main {
-	height: 90%;
+	min-height: 100%;
 	width: 100%;
 	padding: $padding*2;
+	margin-bottom: -$footer-height;
+	&:after {
+		content: "";
+		display: block;
+		height: $footer-height;
+	}
 }
 
 header {
@@ -103,10 +115,10 @@ header {
 }
 
 footer {
+	height: $footer-height;
+	padding: $padding;
 	width: 100%;
 	position: relative;
-	position: absolute;
-	bottom: 0;
 }
 
 img.duck {
@@ -189,7 +201,6 @@ button {
 
 footer {
 	background: rgba(lighten($blue,5),0.7);
-	padding: $padding;
 	color: darken($gray,20);
 	font-size: 0.85em;
 }
