@@ -88,7 +88,7 @@ html, body {
 main {
 	min-height: 100%;
 	width: 100%;
-	padding: $padding*2;
+	padding: $padding*2 $padding;
 	margin-bottom: -$footer-height;
 	&:after {
 		content: "";
@@ -111,9 +111,14 @@ header {
 }
 
 #message-log {
-	margin-top: -40px;
-	height: 258px;
+	height: 200px;
 	overflow: auto;
+}
+
+textarea {
+	width: 100%;
+	padding: $padding;
+	margin: 0 auto;
 }
 
 .input {
@@ -134,6 +139,19 @@ img.duck {
 	width: 100px;
 	height: auto;
 	z-index: -1;
+}
+
+@media only screen and (min-width: 481px) {
+	main {
+		padding: $padding*2;
+	}
+	#message-log {
+		height: 258px;
+		margin-top: -40px;
+	}
+	textarea {
+		min-height: 200px;
+	}
 }
 
 /* STYLES */
@@ -175,10 +193,6 @@ img.duck {
 }
 
 textarea {
-	min-height: 200px;
-	width: 100%;
-	padding: $padding;
-	margin: 0 auto;
 	font-size: 22px;
 	background: $white;
 	border: 2px solid darken($gray,20);

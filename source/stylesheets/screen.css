@@ -529,7 +529,7 @@ html, body {
 main {
   min-height: 100%;
   width: 100%;
-  padding: 24px;
+  padding: 24px 12px;
   margin-bottom: -70px;
 }
 /* line 93, ../sass/screen.scss */
@@ -551,17 +551,23 @@ header {
 
 /* line 113, ../sass/screen.scss */
 #message-log {
-  margin-top: -40px;
-  height: 258px;
+  height: 200px;
   overflow: auto;
 }
 
-/* line 119, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 0 auto;
+}
+
+/* line 124, ../sass/screen.scss */
 .input {
   margin-top: -180px;
 }
 
-/* line 123, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 footer {
   height: 70px;
   padding: 12px;
@@ -569,7 +575,7 @@ footer {
   position: relative;
 }
 
-/* line 130, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 img.duck {
   position: absolute;
   bottom: 40px;
@@ -579,14 +585,31 @@ img.duck {
   z-index: -1;
 }
 
+@media only screen and (min-width: 481px) {
+  /* line 145, ../sass/screen.scss */
+  main {
+    padding: 24px;
+  }
+
+  /* line 148, ../sass/screen.scss */
+  #message-log {
+    height: 258px;
+    margin-top: -40px;
+  }
+
+  /* line 152, ../sass/screen.scss */
+  textarea {
+    min-height: 200px;
+  }
+}
 /* STYLES */
-/* line 142, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 .logo img {
   width: 100px;
   height: auto;
 }
 
-/* line 147, ../sass/screen.scss */
+/* line 165, ../sass/screen.scss */
 #message-log {
   background: #ffffff;
   border-left: 2px solid;
@@ -596,47 +619,43 @@ img.duck {
   overflow-y: scroll;
 }
 
-/* line 156, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 .message {
   color: #5c6461;
   padding: 12px;
   position: relative;
 }
-/* line 160, ../sass/screen.scss */
+/* line 178, ../sass/screen.scss */
 .message.duck {
   background: #FFD700;
 }
-/* line 163, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 .message.user {
   background: #ffffff;
 }
-/* line 166, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 .message.typing {
   -moz-animation: fadeIn 2s infinite;
   -webkit-animation: fadeIn 2s infinite;
   animation: fadeIn 2s infinite;
 }
 
-/* line 171, ../sass/screen.scss */
+/* line 189, ../sass/screen.scss */
 .duck img {
   max-width: 200px;
   float: right;
   padding-right: 12px;
 }
 
-/* line 177, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 textarea {
-  min-height: 200px;
-  width: 100%;
-  padding: 12px;
-  margin: 0 auto;
   font-size: 22px;
   background: #ffffff;
   border: 2px solid #747f7a;
   resize: vertical;
   color: #747f7a;
 }
-/* line 187, ../sass/screen.scss */
+/* line 201, ../sass/screen.scss */
 textarea:focus {
   outline: none;
   border-color: #5c6461;
@@ -662,7 +681,7 @@ textarea::-webkit-input-placeholder {
   font-style: italic;
 }
 
-/* line 197, ../sass/screen.scss */
+/* line 211, ../sass/screen.scss */
 button {
   clear: both;
   margin-top: 24px;
@@ -677,12 +696,12 @@ button {
   -webkit-transition: all, 0.125s;
   transition: all, 0.125s;
 }
-/* line 205, ../sass/screen.scss */
+/* line 219, ../sass/screen.scss */
 button:hover {
   background: #f5ce00;
 }
 
-/* line 210, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 footer {
   background: rgba(231, 238, 244, 0.7);
   color: #747f7a;
