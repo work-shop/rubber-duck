@@ -19,7 +19,7 @@ var delays = [
 
 $(document).ready( function() {
 	var inputfield = $( '#box-message' );
-	var submitfield = $('#box-submit');
+	var submitfield = $('#submit');
 	var responsefield = $('#message-log');
 
 	function handle_input() {
