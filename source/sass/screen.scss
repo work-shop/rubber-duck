@@ -44,6 +44,12 @@ $footer-height: 70px;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
+@include keyframes(fadeIn) {
+  0% { color: transparent; }
+  65% { color: inherit; }
+  100% { color: transparent; }
+}
+
 .hidden {
 	visibility: hidden;
 }
@@ -157,7 +163,9 @@ img.duck {
 	&.user {
 		background: $white;
 	}
-
+	&.typing {
+		@include animation(fadeIn 2s infinite);
+	}
 }
 
 .duck img {

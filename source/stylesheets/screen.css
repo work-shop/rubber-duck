@@ -456,57 +456,90 @@ html {
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
-/* line 47, ../sass/screen.scss */
+@-moz-keyframes fadeIn {
+  0% {
+    color: transparent;
+  }
+  65% {
+    color: inherit;
+  }
+  100% {
+    color: transparent;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    color: transparent;
+  }
+  65% {
+    color: inherit;
+  }
+  100% {
+    color: transparent;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    color: transparent;
+  }
+  65% {
+    color: inherit;
+  }
+  100% {
+    color: transparent;
+  }
+}
+/* line 53, ../sass/screen.scss */
 .hidden {
   visibility: hidden;
 }
 
 /* TYPOGRAPHY */
-/* line 56, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
 body {
   font-family: Apercu, Helvetica Nueue, Arial, sans-serif;
   background: #8e9894;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 67, ../sass/screen.scss */
 a {
   text-decoration: none;
   color: #8e9894;
   border-bottom: 1px solid #5c6461;
 }
-/* line 65, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 a:hover {
   color: #5c6461;
 }
 
 /* LAYOUT */
-/* line 72, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 html, body {
   height: 100%;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .wrapper, #message-log, .input, footer p {
   max-width: 610px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 82, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 main {
   min-height: 100%;
   width: 100%;
   padding: 24px;
   margin-bottom: -70px;
 }
-/* line 87, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 main:after {
   content: "";
   display: block;
   height: 70px;
 }
 
-/* line 94, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 header {
   display: block;
   text-align: left;
@@ -516,19 +549,19 @@ header {
   margin-right: auto;
 }
 
-/* line 107, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 #message-log {
   margin-top: -40px;
   height: 258px;
   overflow: auto;
 }
 
-/* line 113, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 .input {
   margin-top: -180px;
 }
 
-/* line 117, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 footer {
   height: 70px;
   padding: 12px;
@@ -536,7 +569,7 @@ footer {
   position: relative;
 }
 
-/* line 124, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 img.duck {
   position: absolute;
   bottom: 40px;
@@ -547,13 +580,13 @@ img.duck {
 }
 
 /* STYLES */
-/* line 136, ../sass/screen.scss */
+/* line 142, ../sass/screen.scss */
 .logo img {
   width: 100px;
   height: auto;
 }
 
-/* line 141, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 #message-log {
   background: #ffffff;
   border-left: 2px solid;
@@ -563,29 +596,35 @@ img.duck {
   overflow-y: scroll;
 }
 
-/* line 150, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 .message {
   color: #5c6461;
   padding: 12px;
   position: relative;
 }
-/* line 154, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 .message.duck {
   background: #FFD700;
 }
-/* line 157, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .message.user {
   background: #ffffff;
 }
+/* line 166, ../sass/screen.scss */
+.message.typing {
+  -moz-animation: fadeIn 2s infinite;
+  -webkit-animation: fadeIn 2s infinite;
+  animation: fadeIn 2s infinite;
+}
 
-/* line 163, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 .duck img {
   max-width: 200px;
   float: right;
   padding-right: 12px;
 }
 
-/* line 169, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 textarea {
   min-height: 200px;
   width: 100%;
@@ -597,7 +636,7 @@ textarea {
   resize: vertical;
   color: #747f7a;
 }
-/* line 179, ../sass/screen.scss */
+/* line 187, ../sass/screen.scss */
 textarea:focus {
   outline: none;
   border-color: #5c6461;
@@ -623,7 +662,7 @@ textarea::-webkit-input-placeholder {
   font-style: italic;
 }
 
-/* line 189, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 button {
   clear: both;
   margin-top: 24px;
@@ -638,12 +677,12 @@ button {
   -webkit-transition: all, 0.125s;
   transition: all, 0.125s;
 }
-/* line 197, ../sass/screen.scss */
+/* line 205, ../sass/screen.scss */
 button:hover {
   background: #f5ce00;
 }
 
-/* line 202, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 footer {
   background: rgba(231, 238, 244, 0.7);
   color: #747f7a;
