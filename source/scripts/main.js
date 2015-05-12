@@ -32,6 +32,7 @@ $(document).ready( function() {
 
 		socket.emit('new-message', '', message, timestamp, response, tags);
 		inputfield.val('');
+		responsefield[0].scrollTop = responsefield[0].scrollHeight;
 	}
 
 	function duck( message ) {
@@ -43,9 +44,9 @@ $(document).ready( function() {
 		var thisMessegeElement = createMessageElement( message, response );
 		var thisResponseElement = createResponseElement( message, '...' );
 
-		responsefield.prepend( thisMessegeElement )
+		responsefield.append( thisMessegeElement )
 				 .delay( randomChoice( delays ) )
-				 .prepend( thisResponseElement )
+				 .append( thisResponseElement )
 				 .queue( function( next ) {
 				 	thisResponseElement.removeClass('typing');
 				 	thisResponseElement.text( response );
@@ -76,6 +77,10 @@ $(document).ready( function() {
 	submitfield.on('click', handle_input);
 
 	socket.on( 'new-message', newMessageHandler);
+
+	socket.on( 'new-message', function() {
+		responsefield[0].scrollTop = responsefield[0].scrollHeight;
+	});
 
 	submitfield.one( "click", function() {
 		responsefield.removeClass('hidden').css('margin-top','0')
