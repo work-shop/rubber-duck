@@ -2,10 +2,10 @@ var socket = io();
 
 var responses = [
 	'Quack!', 
-	'Have you tried having coffee? Maybe a large dark?', 
-	'Are you sure that\'s a real problem?', 
-	'Have you thought about hiring Work-Shop for this? I really think that could help.',
-
+	'Quack.',
+	// 'Have you tried having coffee? Maybe a large dark?', 
+	// 'Are you sure that\'s a real problem?', 
+	// 'Have you thought about hiring Work-Shop for this? I really think that could help.',
 ];
 
 var delays = [
