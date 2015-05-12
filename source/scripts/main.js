@@ -71,20 +71,14 @@ $(document).ready( function() {
 		console.log( timestamp + ': ' + message + ' => ' + response);
 	}
 
-	inputfield.on('keyup', function( e ) { if ( e.keyCode == 13 ) handle_input(); } );
+	inputfield.on('keyup', function( e ) { if ( e.keyCode == 13 ) submitfield.click(); } );
 
 	submitfield.on('click', handle_input);
 
 	socket.on( 'new-message', newMessageHandler);
 
-	$('#box-message').keyup(function(event){
-	    if(event.keyCode == 13){
-	        $('#submit').click();
-	    }
-	});
-
-	$('#submit').one( "click", function() {
-		$('#message-log').removeClass('hidden').css('margin-top','0')
+	submitfield.one( "click", function() {
+		responsefield.removeClass('hidden').css('margin-top','0')
 		.addClass('slideDown')
 		;
 		$('.input').css('margin-top','0').addClass('slideDown');
