@@ -59,6 +59,7 @@ body {
 
 a {
 	text-decoration: none;
+	font-weight: bold;
 	color: darken($gray,20);
 	padding-bottom: 0.25em;
 	border-bottom: 2px solid $gray;
@@ -118,7 +119,9 @@ footer {
 	width: 100%;
 	position: relative;
 	p {
-		@extend %wrapper;
+		max-width: 880px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
