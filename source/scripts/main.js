@@ -21,6 +21,7 @@ $(document).ready( function() {
 	var inputfield = $( '#box-message' );
 	var submitfield = $('#submit');
 	var responsefield = $('#message-log');
+	var responselist = $('#message-log ul')
 
 	function handle_input() {
 
@@ -41,7 +42,7 @@ $(document).ready( function() {
 		var thisMessegeElement = createMessageElement( message, response );
 		var thisResponseElement = createResponseElement( message, '...' );
 
-		responsefield.append( thisMessegeElement ) 
+		responselist.append( thisMessegeElement ) 
 			.delay( randomChoice( delays ) ) 
 			.append( thisResponseElement ) 
 			.queue( function( next ) {
@@ -58,11 +59,11 @@ $(document).ready( function() {
 	} 
 
 	function createMessageElement( message, response ) {
-		return $('<div>').attr('class', 'user call message').text( message );
+		return $('<li>').attr('class', 'user call message').text( message );
 	}
 
 	function createResponseElement( message, response ) {
-		return $('<div>').attr('class', 'duck response message typing').text( response );
+		return $('<li>').attr('class', 'duck response message typing').text( response );
 	}
 
 	function newMessageHandler( user, message, timestamp, response, tags ) {

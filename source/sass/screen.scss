@@ -68,6 +68,12 @@ a {
 	}
 }
 
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
 
 /* LAYOUT */
 
@@ -100,6 +106,13 @@ header {
 	@extend %wrapper;
 	height: 200px;
 	overflow: auto;
+	position: relative;
+	ul {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		max-height: 100%;
+	}
 }
 
 textarea {
