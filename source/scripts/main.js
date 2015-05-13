@@ -84,6 +84,7 @@ $(document).ready( function() {
 		.addClass('slideDown')
 		;
 		$('.input').css('margin-top','0').addClass('slideDown');
+		$('textarea').attr('placeholder','').focus();
 	} );
 
 });
