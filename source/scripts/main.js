@@ -23,7 +23,6 @@ $(document).ready( function() {
 	var responsefield = $('#message-log');
 
 	function handle_input() {
-		console.log('hello?')
 
 		var message = inputfield.val();
 		var timestamp = Date.now().toString();
@@ -37,21 +36,19 @@ $(document).ready( function() {
 
 	function duck( message ) {
 
-		console.log('test');
-
 		var response = randomChoice( responses );
 
 		var thisMessegeElement = createMessageElement( message, response );
 		var thisResponseElement = createResponseElement( message, '...' );
 
-		responsefield.append( thisMessegeElement )
-				 .delay( randomChoice( delays ) )
-				 .append( thisResponseElement )
-				 .queue( function( next ) {
-				 	thisResponseElement.removeClass('typing');
-				 	thisResponseElement.text( response );
-				 	next();
-				 });
+		responsefield.append( thisMessegeElement ) 
+			.delay( randomChoice( delays ) ) 
+			.append( thisResponseElement ) 
+			.queue( function( next ) {
+			 	thisResponseElement.removeClass('typing');
+			 	thisResponseElement.text( response );
+			 	next();
+			});
 
 		return response;
 	}

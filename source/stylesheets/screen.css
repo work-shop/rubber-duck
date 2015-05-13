@@ -1,3 +1,4 @@
+/* SETUP */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -436,7 +437,6 @@ th {
   padding: 0;
 }
 
-/* BORDER-BOX ALL THE THINGS */
 /* line 7, ../sass/screen.scss */
 html {
   box-sizing: border-box;
@@ -449,7 +449,14 @@ html {
 
 /* COLORS */
 /* UTILITIES */
-/* line 41, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
+#message-log, .input, footer p {
+  max-width: 610px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 36, ../sass/screen.scss */
 .slideDown {
   transition-property: all;
   transition-duration: .5s;
@@ -489,57 +496,51 @@ html {
     color: transparent;
   }
 }
-/* line 53, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 .hidden {
   visibility: hidden;
 }
 
 /* TYPOGRAPHY */
-/* line 62, ../sass/screen.scss */
+/* line 55, ../sass/screen.scss */
 body {
   font-family: Apercu, Helvetica Nueue, Arial, sans-serif;
   background: #8e9894;
 }
 
-/* line 67, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 a {
   text-decoration: none;
-  color: #8e9894;
-  border-bottom: 1px solid #5c6461;
+  color: #747f7a;
+  padding-bottom: 0.25em;
+  border-bottom: 2px solid #A9B0AD;
 }
-/* line 71, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 a:hover {
   color: #5c6461;
 }
 
 /* LAYOUT */
-/* line 78, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 html, body {
   height: 100%;
 }
 
-/* line 82, ../sass/screen.scss */
-.wrapper, #message-log, .input, footer p {
-  max-width: 610px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* line 88, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 main {
   min-height: 100%;
   width: 100%;
   padding: 24px 12px;
   margin-bottom: -70px;
 }
-/* line 93, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 main:after {
   content: "";
   display: block;
   height: 70px;
 }
 
-/* line 100, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 header {
   display: block;
   text-align: left;
@@ -549,25 +550,25 @@ header {
   margin-right: auto;
 }
 
-/* line 113, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 #message-log {
   height: 200px;
   overflow: auto;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 textarea {
   width: 100%;
   padding: 12px;
   margin: 0 auto;
 }
 
-/* line 124, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .input {
   margin-top: -180px;
 }
 
-/* line 128, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 footer {
   height: 70px;
   padding: 12px;
@@ -575,7 +576,7 @@ footer {
   position: relative;
 }
 
-/* line 135, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 img.duck {
   position: absolute;
   bottom: 40px;
@@ -586,30 +587,30 @@ img.duck {
 }
 
 @media only screen and (min-width: 481px) {
-  /* line 145, ../sass/screen.scss */
+  /* line 135, ../sass/screen.scss */
   main {
     padding: 24px;
   }
 
-  /* line 148, ../sass/screen.scss */
+  /* line 138, ../sass/screen.scss */
   #message-log {
     height: 258px;
     margin-top: -40px;
   }
 
-  /* line 152, ../sass/screen.scss */
+  /* line 142, ../sass/screen.scss */
   textarea {
     min-height: 200px;
   }
 }
 /* STYLES */
-/* line 160, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .logo img {
   width: 100px;
   height: auto;
 }
 
-/* line 165, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 #message-log {
   background: #ffffff;
   border-left: 2px solid;
@@ -619,35 +620,28 @@ img.duck {
   overflow-y: scroll;
 }
 
-/* line 174, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 .message {
   color: #5c6461;
   padding: 12px;
   position: relative;
 }
-/* line 178, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 .message.duck {
   background: #FFD700;
 }
-/* line 181, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 .message.user {
   background: #ffffff;
 }
-/* line 184, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 .message.typing {
   -moz-animation: fadeIn 2s infinite;
   -webkit-animation: fadeIn 2s infinite;
   animation: fadeIn 2s infinite;
 }
 
-/* line 189, ../sass/screen.scss */
-.duck img {
-  max-width: 200px;
-  float: right;
-  padding-right: 12px;
-}
-
-/* line 195, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 textarea {
   font-size: 22px;
   background: #ffffff;
@@ -655,7 +649,7 @@ textarea {
   resize: vertical;
   color: #747f7a;
 }
-/* line 201, ../sass/screen.scss */
+/* line 185, ../sass/screen.scss */
 textarea:focus {
   outline: none;
   border-color: #5c6461;
@@ -681,7 +675,7 @@ textarea::-webkit-input-placeholder {
   font-style: italic;
 }
 
-/* line 211, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 button {
   clear: both;
   margin-top: 24px;
@@ -696,14 +690,21 @@ button {
   -webkit-transition: all, 0.125s;
   transition: all, 0.125s;
 }
-/* line 219, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 button:hover {
   background: #f5ce00;
 }
 
-/* line 224, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 footer {
   background: rgba(231, 238, 244, 0.7);
   color: #747f7a;
   font-size: 0.85em;
+}
+
+/* line 214, ../sass/screen.scss */
+.duck img {
+  max-width: 200px;
+  float: right;
+  padding-right: 12px;
 }

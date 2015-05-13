@@ -1,8 +1,8 @@
+
+/* SETUP */
+
 @import "compass/css3";
 @import "normalize";
-
-
-/* BORDER-BOX ALL THE THINGS */
 
 html {
   box-sizing: border-box;
@@ -10,6 +10,7 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
 
 /* COLORS */
 
@@ -26,16 +27,10 @@ $padding: 12px;
 
 $footer-height: 70px;
 
-@mixin clearfix {
-	display: inline-block;
-	&:after {
-	     visibility: hidden;
-	     display: block;
-	     font-size: 0;
-	     content: " ";
-	     clear: both;
-	     height: 0;
-    }
+%wrapper {
+	max-width: 610px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .slideDown {
@@ -45,44 +40,38 @@ $footer-height: 70px;
 }
 
 @include keyframes(fadeIn) {
-  0% { color: transparent; }
-  65% { color: inherit; }
-  100% { color: transparent; }
+	0% { color: transparent; }
+	65% { color: inherit; }
+	100% { color: transparent; }
 }
 
 .hidden {
 	visibility: hidden;
 }
 
+
 /* TYPOGRAPHY */
 
-$sans-serif: Apercu, Helvetica Nueue, Arial, sans-serif;
-$serif: serif;
-
 body {
-	font-family: $sans-serif;
+	font-family: Apercu, Helvetica Nueue, Arial, sans-serif;
 	background: darken($gray,10);
 }
 
 a {
 	text-decoration: none;
-	color: lighten($black,20);
-	border-bottom: 1px solid $black;
+	color: darken($gray,20);
+	padding-bottom: 0.25em;
+	border-bottom: 2px solid $gray;
 	&:hover {
 		color: $black;
 	}
 }
 
+
 /* LAYOUT */
 
 html, body {
   height: 100%;
-}
-
-.wrapper {
-	max-width: 610px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 main {
@@ -106,11 +95,8 @@ header {
 	margin-right: auto;
 }
 
-#message-log, .input, footer p {
-	@extend .wrapper;
-}
-
 #message-log {
+	@extend %wrapper;
 	height: 200px;
 	overflow: auto;
 }
@@ -122,6 +108,7 @@ textarea {
 }
 
 .input {
+	@extend %wrapper;
 	margin-top: -180px;
 }
 
@@ -130,6 +117,9 @@ footer {
 	padding: $padding;
 	width: 100%;
 	position: relative;
+	p {
+		@extend %wrapper;
+	}
 }
 
 img.duck {
@@ -154,8 +144,8 @@ img.duck {
 	}
 }
 
-/* STYLES */
 
+/* STYLES */
 
 .logo img {
 	width: 100px;
@@ -184,12 +174,6 @@ img.duck {
 	&.typing {
 		@include animation(fadeIn 2s infinite);
 	}
-}
-
-.duck img {
-	max-width: 200px;
-	float: right;
-	padding-right: $padding;
 }
 
 textarea {
@@ -225,4 +209,10 @@ footer {
 	background: rgba(lighten($blue,5),0.7);
 	color: darken($gray,20);
 	font-size: 0.85em;
+}
+
+.duck img {
+	max-width: 200px;
+	float: right;
+	padding-right: $padding;
 }
