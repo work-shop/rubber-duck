@@ -16,7 +16,7 @@ html {
 
 $blue: #d5e1ec;
 $gray: #A9B0AD;
-$black: darken($gray,30);
+$black: darken($gray,40);
 $white: #ffffff;
 $yellow: #FFD700;
 
@@ -155,7 +155,7 @@ img.duck {
 		height: 258px;
 		margin-top: -40px;
 	}
-	textarea {
+	.initial textarea {
 		min-height: 200px;
 	}
 }
@@ -193,7 +193,6 @@ img.duck {
 }
 
 textarea {
-	font-size: 22px;
 	background: $white;
 	border: 2px solid darken($gray,20);
 	resize: vertical;
@@ -206,6 +205,9 @@ textarea {
 	    color: lighten($gray,20);
 	    font-style: italic;
 	}
+}
+.initial textarea {
+	font-size: 22px;
 }
 
 button {
