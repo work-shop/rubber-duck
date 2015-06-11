@@ -59,12 +59,11 @@ body {
 
 a {
 	text-decoration: none;
-	font-weight: bold;
-	color: darken($gray,20);
+	color: $black;
 	padding-bottom: 0.25em;
 	border-bottom: 2px solid $gray;
 	&:hover {
-		color: $black;
+		color: darken($black,10);
 	}
 }
 
@@ -135,6 +134,7 @@ footer {
 		max-width: 880px;
 		margin-left: auto;
 		margin-right: auto;
+		text-align: right;
 	}
 }
 
@@ -219,12 +219,6 @@ button {
 	&:hover {
 		background: darken($yellow,2);
 	}
-}
-
-footer {
-	background: rgba(lighten($blue,5),0.7);
-	color: darken($gray,20);
-	font-size: 0.85em;
 }
 
 .duck img {
