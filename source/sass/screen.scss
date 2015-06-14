@@ -180,6 +180,7 @@ img.duck {
 .message {
 	color: $black;
 	padding: $padding;
+	word-wrap: break-word;
 	position: relative;
 	&.duck {
 		background: $yellow;
