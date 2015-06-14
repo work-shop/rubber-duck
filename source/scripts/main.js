@@ -21,7 +21,8 @@ $(document).ready( function() {
 	var inputfield = $( '#box-message' );
 	var submitfield = $('#submit');
 	var responsefield = $('#message-log');
-	var responselist = $('#message-log ul')
+	var responselist = $('#message-log ul');
+	var responding = false;
 
 	function handle_input() {
 
@@ -37,19 +38,30 @@ $(document).ready( function() {
 
 	function duck( message ) {
 
-		var response = randomChoice( responses );
+		var thisMessegeElement = createMessageElement( message, undefined );
 
-		var thisMessegeElement = createMessageElement( message, response );
-		var thisResponseElement = createResponseElement( message, '...' );
+		if ( !responding ) {
+			responding = true;
 
-		responselist.append( thisMessegeElement ) 
-			.delay( randomChoice( delays ) ) 
-			.append( thisResponseElement ) 
-			.queue( function( next ) {
-			 	thisResponseElement.removeClass('typing');
-			 	thisResponseElement.text( response );
-			 	next();
-			});
+			var response = randomChoice( responses );
+
+			var thisResponseElement = createResponseElement( message, '...' );
+
+			responselist.append( thisMessegeElement ) 
+				.delay( randomChoice( delays ) ) 
+				.append( thisResponseElement ) 
+				.queue( function( next ) {
+				 	thisResponseElement.removeClass('typing');
+				 	thisResponseElement.text( response );
+				 	responding = false;
+				 	next();
+				});
+
+		} else {
+			responselist.children('li').last().before(thisMessegeElement);
+			//responselist.append( thisMessegeElement );
+			//responselist.last('li').prev('li').after( thisMessegeElement );
+		}
 
 		return response;
 	}
