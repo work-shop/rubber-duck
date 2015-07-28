@@ -39,16 +39,19 @@ $(document).ready( function() {
 		var thisMessageElement = createMessageElement( message, response );
 		var thisResponseElement = createResponseElement( message, '...' );
 
-		responselist.append( thisMessageElement ) 
-			.delay( randomChoice( delays ) ) 
-			.append( thisResponseElement ) 
-			.queue( function( next ) {
-			 	thisResponseElement.removeClass('typing');
-			 	thisResponseElement.text( response );
-			 	next();
-			});
-
-		return response;
+		responselist.append( thisMessageElement );
+		if ($('.duck').hasClass('typing')) {
+			$('.typing').remove();
+			responselist.delay( randomChoice( delays ) ).append( thisResponseElement ) ;
+		} else {
+			responselist.delay( randomChoice( delays ) ).append( thisResponseElement ) ;
+		}
+		responselist.queue( function( next ) {
+		 	thisResponseElement.removeClass('typing');
+		 	thisResponseElement.text( response );
+		 	next();
+		});
+		
 	}
 
 	function randomChoice( array ) {
