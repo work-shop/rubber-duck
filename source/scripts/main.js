@@ -2,10 +2,7 @@ var socket = io();
 
 var responses = [
 	'Quack!', 
-	'Quack.',
-	// 'Have you tried having coffee? Maybe a large dark?', 
-	// 'Are you sure that\'s a real problem?', 
-	// 'Have you thought about hiring Work-Shop for this? I really think that could help.',
+	'Quack.'
 ];
 
 var delays = [
@@ -39,19 +36,22 @@ $(document).ready( function() {
 
 		var response = randomChoice( responses );
 
-		var thisMessegeElement = createMessageElement( message, response );
+		var thisMessageElement = createMessageElement( message, response );
 		var thisResponseElement = createResponseElement( message, '...' );
 
-		responselist.append( thisMessegeElement ) 
-			.delay( randomChoice( delays ) ) 
-			.append( thisResponseElement ) 
-			.queue( function( next ) {
-			 	thisResponseElement.removeClass('typing');
-			 	thisResponseElement.text( response );
-			 	next();
-			});
-
-		return response;
+		responselist.append( thisMessageElement );
+		if ($('.duck').hasClass('typing')) {
+			$('.typing').remove();
+			responselist.delay( randomChoice( delays ) ).append( thisResponseElement ) ;
+		} else {
+			responselist.delay( randomChoice( delays ) ).append( thisResponseElement ) ;
+		}
+		responselist.queue( function( next ) {
+		 	thisResponseElement.removeClass('typing');
+		 	thisResponseElement.text( response );
+		 	next();
+		});
+		
 	}
 
 	function randomChoice( array ) {
@@ -82,8 +82,7 @@ $(document).ready( function() {
 
 	submitfield.one( "click", function() {
 		responsefield.removeClass('hidden').css('margin-top','0')
-		.addClass('slideDown')
-		;
+		.addClass('slideDown');
 		$('.input').css('margin-top','0').addClass('slideDown');
 		$('textarea').attr('placeholder','').focus();
 	} );
