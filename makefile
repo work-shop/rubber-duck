@@ -6,7 +6,7 @@
 RUNTIME = node
 ENTRY = index.js
 
-SSH_NAME = workshop@mitgovlab.org
+SSH_NAME = workshop@workshopri.site
 REMOTE_NAME = live
 REMOTE_LOCATION = ssh://$(SSH_NAME)/~/git/quack.help.git
 
