@@ -27,7 +27,6 @@ $(document).ready( function() {
 		var response = duck( message );
 		var tags = {};
 
-		socket.emit('new-message', '', message, timestamp, response, tags);
 		inputfield.val('');
 		responsefield[0].scrollTop = responsefield[0].scrollHeight;
 	}
